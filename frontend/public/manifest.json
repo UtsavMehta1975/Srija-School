@@ -1,6 +1,6 @@
 {
-  "short_name": "Genesis School",
-  "name": "Genesis School - Excellence in Education",
+  "short_name": "Srijan School",
+  "name": "Srijan School - Excellence in Education Since 2018",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,7 +10,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#dc2626",
   "background_color": "#ffffff"
 }
 

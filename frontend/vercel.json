@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "package.json",
@@ -10,13 +11,16 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/build/$1"
     }
-  ]
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://srijan-school-backend.vercel.app",
+    "REACT_APP_SCHOOL_NAME": "Srijan School",
+    "REACT_APP_SCHOOL_EMAIL": "srijanschool@gmail.com",
+    "REACT_APP_SCHOOL_PHONE": "+91-9876543210",
+    "REACT_APP_SCHOOL_ADDRESS": "Haldwani, Uttarakhand, India",
+    "REACT_APP_SCHOOL_ESTABLISHED": "2018"
+  }
 }
-
