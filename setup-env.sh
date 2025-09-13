@@ -53,3 +53,4 @@ echo "Environment files created successfully!"
 echo "Please update the database credentials in backend/.env file"
 echo "For production, update the REACT_APP_API_URL in frontend/.env file"
 
+

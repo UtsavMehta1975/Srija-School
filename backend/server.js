@@ -44,7 +44,13 @@ app.use((req, res, next) => {
 // CORS configuration
 console.log('checkpoint 7 server.js - Configuring CORS...');
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [
+    process.env.CLIENT_URL || 'http://localhost:3000',
+    'https://srija-school.vercel.app',
+    'https://srija-school-git-main-utsavmehta1975.vercel.app',
+    'https://srija-school-utsavmehta1975.vercel.app',
+    'https://*.vercel.app'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']

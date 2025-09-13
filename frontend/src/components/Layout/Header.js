@@ -16,48 +16,48 @@ const Header = () => {
     {
       id: 1,
       content: (
-        <div className="carousel-content">
+        <div className="carousel-content school-secondary">
           <span>📞 7895236185</span>
           <span>✉️ srijanschool@gmail.com</span>
           <span>🏫 UDICE: 05110413202</span>
-          <Link to="/">🏠 Home</Link>
-          <Link to="/about">ℹ️ About</Link>
-          <Link to="/contact">📞 Contact</Link>
+          <Link to="/" className="school-secondary">🏠 Home</Link>
+          <Link to="/about" className="school-secondary">ℹ️ About</Link>
+          <Link to="/contact" className="school-secondary">📞 Contact</Link>
         </div>
       )
     },
     {
       id: 2,
       content: (
-        <div className="carousel-content">
-          <Link to="/achievements">🏆 Achievements</Link>
-          <Link to="/fees">💰 Fees</Link>
-          <Link to="/gallery">🖼️ Gallery</Link>
-          <Link to="/gallery/media">📺 Media</Link>
-          <Link to="/gallery/photos">📸 Photos</Link>
-          <Link to="/gallery/videos">🎥 Videos</Link>
+        <div className="carousel-content school-secondary">
+          <Link to="/achievements" className="school-secondary">🏆 Achievements</Link>
+          <Link to="/fees" className="school-secondary">💰 Fees</Link>
+          <Link to="/gallery" className="school-secondary">🖼️ Gallery</Link>
+          <Link to="/gallery/media" className="school-secondary">📺 Media</Link>
+          <Link to="/gallery/photos" className="school-secondary">📸 Photos</Link>
+          <Link to="/gallery/videos" className="school-secondary">🎥 Videos</Link>
         </div>
       )
     },
     {
       id: 3,
       content: (
-        <div className="carousel-content">
-          <Link to="/rules">📋 All Rules</Link>
-          <Link to="/rules/fees">💰 Fees Rules</Link>
-          <Link to="/rules/timings">🕐 Timings</Link>
-          <Link to="/rules/uniform">👔 Uniform</Link>
-          <Link to="/rules/admission">📝 Admission</Link>
-          <Link to="/rules/discipline">⚖️ Discipline</Link>
+        <div className="carousel-content school-secondary">
+          <Link to="/rules" className="school-secondary">📋 All Rules</Link>
+          <Link to="/rules/fees" className="school-secondary">💰 Fees Rules</Link>
+          <Link to="/rules/timings" className="school-secondary">🕐 Timings</Link>
+          <Link to="/rules/uniform" className="school-secondary">👔 Uniform</Link>
+          <Link to="/rules/admission" className="school-secondary">📝 Admission</Link>
+          <Link to="/rules/discipline" className="school-secondary">⚖️ Discipline</Link>
         </div>
       )
     },
     {
       id: 4,
       content: (
-        <div className="carousel-content">
-          <Link to="/rules/bus">🚌 Bus Rules</Link>
-          <Link to="/rules/vacation">🏖️ Vacation</Link>
+        <div className="carousel-content school-secondary">
+          <Link to="/rules/bus" className="school-secondary">🚌 Bus Rules</Link>
+          <Link to="/rules/vacation" className="school-secondary">🏖️ Vacation</Link>
           <span>📚 Srijan School</span>
           <span>🎓 Excellence Since 1995</span>
           <span>🌟 Quality Education</span>
@@ -79,7 +79,7 @@ const Header = () => {
   return (
     <>
       {/* Auto-Rotating Top Carousel */}
-      <div className="top-carousel">
+      <div className="top-carousel school-bg-primary">
         {carouselSlides.map((slide, index) => (
           <div
             key={slide.id}
@@ -133,7 +133,7 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/" 
-                className={isActive('/') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 Home
@@ -142,13 +142,13 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/about" 
-                className={isActive('/about') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/about') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 About
               </Nav.Link>
               
-              <NavDropdown title="Rules & Regulations" id="rules-dropdown">
+              <NavDropdown title="Rules & Regulations" id="rules-dropdown" className="school-primary">
                 <NavDropdown.Item as={Link} to="/rules/admission" onClick={() => setExpanded(false)}>
                   Admission Rules
                 </NavDropdown.Item>
@@ -184,7 +184,7 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/gallery" 
-                className={isActive('/gallery') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/gallery') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 Gallery
@@ -193,7 +193,7 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/achievements" 
-                className={isActive('/achievements') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/achievements') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 Achievements
@@ -202,7 +202,7 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/mandatory-disclosure" 
-                className={isActive('/mandatory-disclosure') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/mandatory-disclosure') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 Mandatory Public Disclosure
@@ -211,7 +211,7 @@ const Header = () => {
               <Nav.Link 
                 as={Link} 
                 to="/contact" 
-                className={isActive('/contact') ? 'school-primary fw-bold' : ''}
+                className={`school-primary ${isActive('/contact') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
                 📞 Contact Us

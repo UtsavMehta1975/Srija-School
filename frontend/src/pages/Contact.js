@@ -49,7 +49,7 @@ const Contact = () => {
       <Row className="mb-5">
         <Col>
           <div className="text-center">
-            <h1 className="text-gradient-primary mb-3">📞 Contact Us</h1>
+            <h1 className="school-primary mb-3">📞 Contact Us</h1>
             <p className="lead text-muted">
               Get in touch with Srijan School for admissions, inquiries, or any assistance you need
             </p>

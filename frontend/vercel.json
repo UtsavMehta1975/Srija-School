@@ -16,7 +16,7 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://srijan-school-backend.vercel.app",
+    "REACT_APP_API_URL": "http://185.196.21.112/api",
     "REACT_APP_SCHOOL_NAME": "Srijan School",
     "REACT_APP_SCHOOL_EMAIL": "srijanschool@gmail.com",
     "REACT_APP_SCHOOL_PHONE": "+91-9876543210",

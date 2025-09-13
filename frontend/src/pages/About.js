@@ -51,7 +51,7 @@ const About = () => {
       {/* About Content */}
       <Row className="mb-5">
         <Col>
-          <h1 className="text-center text-gradient-primary mb-5">About Srijan School</h1>
+          <h1 className="text-center school-primary mb-5">About Srijan School</h1>
           
           {/* About Us Image Carousel */}
           <div className="mb-5">
@@ -106,30 +106,30 @@ const About = () => {
           </div>
           
           {/* Mission */}
-          <Card className="mb-4 card-elevated">
+          <Card className="mb-4 card-elevated bg-red">
             <Card.Body className="p-4">
-              <h3 className="text-gradient-primary mb-3">Our Mission</h3>
-              <p className="lead text-muted">
+              <h3 className="text-on-red mb-3">Our Mission</h3>
+              <p className="lead text-on-red">
                 {aboutContent.mission}
               </p>
             </Card.Body>
           </Card>
 
           {/* Vision */}
-          <Card className="mb-4 card-elevated">
+          <Card className="mb-4 card-elevated bg-black">
             <Card.Body className="p-4">
-              <h3 className="text-gradient-primary mb-3">Our Vision</h3>
-              <p className="lead text-muted">
+              <h3 className="text-on-black mb-3">Our Vision</h3>
+              <p className="lead text-on-black">
                 {aboutContent.vision}
               </p>
             </Card.Body>
           </Card>
 
           {/* History */}
-          <Card className="mb-4 card-elevated">
+          <Card className="mb-4 card-elevated bg-red">
             <Card.Body className="p-4">
-              <h3 className="text-gradient-primary mb-3">Our History</h3>
-              <p className="lead text-muted">
+              <h3 className="text-on-red mb-3">Our History</h3>
+              <p className="lead text-on-red">
                 {aboutContent.history}
               </p>
             </Card.Body>

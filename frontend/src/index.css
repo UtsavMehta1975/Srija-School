@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-/* Custom styles for Srijan School - Blood Red, Black Gradient, White Theme */
+/* Custom styles for Srijan School - Blood Red and Black Gradient Theme */
 .school-primary {
   color: #dc2626 !important; /* Blood Red */
 }
@@ -22,7 +22,7 @@ code {
 }
 
 .school-secondary {
-  color: #ffffff !important; /* White */
+  color: #ffffff !important; /* White text for visibility */
 }
 
 .school-bg-secondary {
@@ -30,17 +30,247 @@ code {
 }
 
 .school-accent {
-  color: #fbbf24 !important; /* Gold accent for highlights */
+  color: #dc2626 !important; /* Blood Red for highlights */
 }
 
 .school-bg-accent {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important; /* Gold gradient */
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%) !important; /* Blood Red gradient */
+}
+
+/* Text visibility classes - only 2 colors */
+.text-on-red {
+  color: #ffffff !important; /* White text on red background */
+}
+
+.text-on-black {
+  color: #ffffff !important; /* White text on black background */
+}
+
+.text-on-red-bg {
+  color: #dc2626 !important; /* Red text on red background (for contrast) */
+}
+
+.text-on-black-bg {
+  color: #dc2626 !important; /* Red text on black background */
+}
+
+/* Background classes - only 2 colors */
+.bg-red {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%) !important;
+}
+
+.bg-black {
+  background: linear-gradient(135deg, #000000 0%, #1f2937 100%) !important;
 }
 
 /* Carousel styles */
 .carousel-item img {
   height: 500px;
   object-fit: cover;
+}
+
+/* Hero carousel styles */
+.hero-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  height: 500px;
+}
+
+.carousel-main-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-image {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.3s ease;
+}
+
+.carousel-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive carousel */
+@media (max-width: 1200px) {
+  .carousel-grid {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-grid {
+    grid-template-columns: 1fr;
+    height: 400px;
+    gap: 15px;
+  }
+  
+  .carousel-side-images {
+    flex-direction: row;
+    height: 150px;
+  }
+  
+  .side-image {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-grid {
+    height: 350px;
+    gap: 10px;
+  }
+  
+  .carousel-side-images {
+    height: 120px;
+  }
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80px;
+}
+
+.caption-content {
+  color: white;
+  text-align: center;
+}
+
+.caption-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.caption-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile responsive captions */
+@media (max-width: 768px) {
+  .caption-title {
+    font-size: 1.2rem;
+  }
+  
+  .caption-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-caption {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .caption-title {
+    font-size: 1rem;
+  }
+  
+  .caption-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-caption {
+    padding: 10px;
+  }
+}
+
+/* Custom carousel controls */
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 3;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+/* Custom carousel indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: white;
+}
+
+.carousel-indicator:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /* Faculty card styles */
