@@ -1,26 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://your-backend-url.vercel.app/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/build/$1"
-    }
-  ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "cd frontend && npm install",
+  "framework": "create-react-app",
   "env": {
-    "REACT_APP_API_URL": "https://your-backend-url.vercel.app",
+    "REACT_APP_API_URL": "https://srijan-school-backend.vercel.app",
     "REACT_APP_SCHOOL_NAME": "Srijan School",
     "REACT_APP_SCHOOL_EMAIL": "srijanschool@gmail.com",
     "REACT_APP_SCHOOL_PHONE": "+91-9876543210",

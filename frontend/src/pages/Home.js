@@ -1,504 +1,247 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button, Carousel, Image } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Button, Card, Carousel, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [selectedPhoto, setSelectedPhoto] = useState(0);
 
-  // School photos for the hero carousel - 30+ high-quality images starting from newest
+  // School photos for the hero carousel - 50+ high-quality images starting from newest
   const heroPhotos = [
-    {
-      id: 1,
-      url: '/IMG_8192.JPG',
-      title: 'School Celebration'
-    },
-    {
-      id: 2,
-      url: '/IMG_8193.JPG',
-      title: 'Student Activities'
-    },
-    {
-      id: 3,
-      url: '/IMG_8191.JPG',
-      title: 'Learning Moments'
-    },
-    {
-      id: 4,
-      url: '/IMG_8190.JPG',
-      title: 'School Events'
-    },
-    {
-      id: 5,
-      url: '/IMG_8188.JPG',
-      title: 'School Life'
-    },
-    {
-      id: 6,
-      url: '/IMG_8189.JPG',
-      title: 'Student Engagement'
-    },
-    {
-      id: 7,
-      url: '/IMG_8187.JPG',
-      title: 'School Activities'
-    },
-    {
-      id: 8,
-      url: '/IMG_8184.JPG',
-      title: 'Educational Environment'
-    },
-    {
-      id: 9,
-      url: '/IMG_8185.JPG',
-      title: 'Student Success'
-    },
-    {
-      id: 10,
-      url: '/IMG_8186.JPG',
-      title: 'Learning Experience'
-    },
-    {
-      id: 11,
-      url: '/IMG_8181.JPG',
-      title: 'School Community'
-    },
-    {
-      id: 12,
-      url: '/IMG_8177.JPG',
-      title: 'Academic Excellence'
-    },
-    {
-      id: 13,
-      url: '/IMG_8176.JPG',
-      title: 'Student Growth'
-    },
-    {
-      id: 14,
-      url: '/IMG_8178.JPG',
-      title: 'School Spirit'
-    },
-    {
-      id: 15,
-      url: '/IMG_8179.JPG',
-      title: 'Educational Journey'
-    },
-    {
-      id: 16,
-      url: '/IMG_8182.JPG',
-      title: 'Learning Together'
-    },
-    {
-      id: 17,
-      url: '/IMG_8183.JPG',
-      title: 'Student Development'
-    },
-    {
-      id: 18,
-      url: '/IMG_8215.JPG',
-      title: 'School Achievements'
-    },
-    {
-      id: 19,
-      url: '/IMG_8214.JPG',
-      title: 'Educational Excellence'
-    },
-    {
-      id: 20,
-      url: '/IMG_8213.JPG',
-      title: 'Student Learning'
-    },
-    {
-      id: 21,
-      url: '/IMG_8212.JPG',
-      title: 'School Environment'
-    },
-    {
-      id: 22,
-      url: '/IMG_8211.JPG',
-      title: 'Academic Success'
-    },
-    {
-      id: 23,
-      url: '/IMG_8210.JPG',
-      title: 'Learning Community'
-    },
-    {
-      id: 24,
-      url: '/IMG_8209.JPG',
-      title: 'Student Engagement'
-    },
-    {
-      id: 25,
-      url: '/IMG_8208.JPG',
-      title: 'Educational Activities'
-    },
-    {
-      id: 26,
-      url: '/IMG_8207.JPG',
-      title: 'School Life'
-    },
-    {
-      id: 27,
-      url: '/IMG_8206.JPG',
-      title: 'Student Moments'
-    },
-    {
-      id: 28,
-      url: '/IMG_8205.JPG',
-      title: 'Learning Experience'
-    },
-    {
-      id: 29,
-      url: '/IMG_8204.JPG',
-      title: 'School Events'
-    },
-    {
-      id: 30,
-      url: '/IMG_8203.JPG',
-      title: 'Student Activities'
-    },
-    {
-      id: 31,
-      url: '/IMG_8202.JPG',
-      title: 'Educational Journey'
-    },
-    {
-      id: 32,
-      url: '/IMG_8201.JPG',
-      title: 'School Community'
-    },
-    {
-      id: 33,
-      url: '/IMG_8200.JPG',
-      title: 'Learning Together'
-    },
-    {
-      id: 34,
-      url: '/IMG_8199.JPG',
-      title: 'Student Success'
-    },
-    {
-      id: 35,
-      url: '/IMG_8198.JPG',
-      title: 'Academic Excellence'
-    },
-    {
-      id: 36,
-      url: '/IMG_8197.JPG',
-      title: 'School Achievements'
-    },
-    {
-      id: 37,
-      url: '/IMG_8196.JPG',
-      title: 'Student Growth'
-    },
-    {
-      id: 38,
-      url: '/IMG_8195.JPG',
-      title: 'Educational Environment'
-    },
-    {
-      id: 39,
-      url: '/IMG_8194.JPG',
-      title: 'Learning Moments'
-    },
-    {
-      id: 40,
-      url: '/IMG_2436.JPG',
-      title: 'School Celebration'
-    },
-    {
-      id: 41,
-      url: '/IMG_2331.JPG',
-      title: 'Student Activities'
-    },
-    {
-      id: 42,
-      url: '/IMG_2034.JPG',
-      title: 'Learning Environment'
-    },
-    {
-      id: 43,
-      url: '/IMG_2033.JPG',
-      title: 'School Life'
-    },
-    {
-      id: 44,
-      url: '/IMG_2032.JPG',
-      title: 'Educational Experience'
-    },
-    {
-      id: 45,
-      url: '/IMG_2031.JPG',
-      title: 'Student Engagement'
-    },
-    {
-      id: 46,
-      url: '/IMG_2030.JPG',
-      title: 'Academic Success'
-    },
-    {
-      id: 47,
-      url: '/IMG_2029.JPG',
-      title: 'Learning Community'
-    },
-    {
-      id: 48,
-      url: '/IMG_2023.JPG',
-      title: 'School Spirit'
-    },
-    {
-      id: 49,
-      url: '/IMG_1973.JPG',
-      title: 'Student Development'
-    },
-    {
-      id: 50,
-      url: '/aboutus.JPG',
-      title: 'Srijan School'
-    }
+    { id: 1, url: '/IMG_8192.JPG', title: 'School Celebration' },
+    { id: 2, url: '/IMG_8191.JPG', title: 'Student Activities' },
+    { id: 3, url: '/IMG_8190.JPG', title: 'Learning Environment' },
+    { id: 4, url: '/IMG_8189.JPG', title: 'School Life' },
+    { id: 5, url: '/IMG_8188.JPG', title: 'Educational Experience' },
+    { id: 6, url: '/IMG_8187.JPG', title: 'Student Engagement' },
+    { id: 7, url: '/IMG_8186.JPG', title: 'Academic Success' },
+    { id: 8, url: '/IMG_8185.JPG', title: 'Learning Community' },
+    { id: 9, url: '/IMG_8184.JPG', title: 'School Spirit' },
+    { id: 10, url: '/IMG_8183.JPG', title: 'Educational Excellence' },
+    { id: 11, url: '/IMG_8182.JPG', title: 'Student Development' },
+    { id: 12, url: '/IMG_8181.JPG', title: 'School Activities' },
+    { id: 13, url: '/IMG_8179.JPG', title: 'Learning Journey' },
+    { id: 14, url: '/IMG_8178.JPG', title: 'Educational Growth' },
+    { id: 15, url: '/IMG_8177.JPG', title: 'School Environment' },
+    { id: 16, url: '/IMG_8176.JPG', title: 'Student Learning' },
+    { id: 17, url: '/IMG_8122.JPG', title: 'Academic Excellence' },
+    { id: 18, url: '/IMG_2454.JPG', title: 'School Celebration' },
+    { id: 19, url: '/IMG_2453.JPG', title: 'Student Activities' },
+    { id: 20, url: '/IMG_2452.JPG', title: 'Learning Environment' },
+    { id: 21, url: '/IMG_2451.JPG', title: 'School Life' },
+    { id: 22, url: '/IMG_2450.JPG', title: 'Educational Experience' },
+    { id: 23, url: '/IMG_2449.JPG', title: 'Student Engagement' },
+    { id: 24, url: '/IMG_2448.JPG', title: 'Academic Success' },
+    { id: 25, url: '/IMG_2447.JPG', title: 'Learning Community' },
+    { id: 26, url: '/IMG_2446.JPG', title: 'School Spirit' },
+    { id: 27, url: '/IMG_2445.JPG', title: 'Educational Excellence' },
+    { id: 28, url: '/IMG_2444.JPG', title: 'Student Development' },
+    { id: 29, url: '/IMG_2442.JPG', title: 'School Activities' },
+    { id: 30, url: '/IMG_2441.JPG', title: 'Learning Journey' },
+    { id: 31, url: '/IMG_2436.JPG', title: 'Educational Growth' },
+    { id: 32, url: '/IMG_2398.JPG', title: 'School Environment' },
+    { id: 33, url: '/IMG_2397.JPG', title: 'Student Learning' },
+    { id: 34, url: '/IMG_2396.JPG', title: 'Academic Excellence' },
+    { id: 35, url: '/IMG_2395.JPG', title: 'School Celebration' },
+    { id: 36, url: '/IMG_2394.JPG', title: 'Student Activities' },
+    { id: 37, url: '/IMG_2393.JPG', title: 'Learning Environment' },
+    { id: 38, url: '/IMG_2392.JPG', title: 'School Life' },
+    { id: 39, url: '/IMG_2391.JPG', title: 'Educational Experience' },
+    { id: 40, url: '/IMG_2390.JPG', title: 'Student Engagement' },
+    { id: 41, url: '/IMG_2389.JPG', title: 'Academic Success' },
+    { id: 42, url: '/IMG_2388.JPG', title: 'Learning Community' },
+    { id: 43, url: '/IMG_2387.JPG', title: 'School Spirit' },
+    { id: 44, url: '/IMG_2386.JPG', title: 'Educational Excellence' },
+    { id: 45, url: '/IMG_2385.JPG', title: 'Student Development' },
+    { id: 46, url: '/IMG_2384.JPG', title: 'School Activities' },
+    { id: 47, url: '/IMG_2383.JPG', title: 'Learning Journey' },
+    { id: 48, url: '/IMG_2382.JPG', title: 'Educational Growth' },
+    { id: 49, url: '/IMG_2381.JPG', title: 'School Environment' },
+    { id: 50, url: '/IMG_2380.JPG', title: 'Student Learning' }
   ];
 
   // Auto-rotate hero carousel
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setSelectedPhoto((prev) => (prev + 1) % heroPhotos.length);
-    }, 5000); // Change photo every 5 seconds
-
+    }, 4000); // Change photo every 4 seconds
     return () => clearInterval(interval);
   }, [heroPhotos.length]);
 
-
   return (
-    <div className="home-page">
-      {/* Hero Photo Carousel */}
-      <section className="hero-photo-carousel">
-        
-        <Container>
-          <Row>
-            <Col lg={8}>
-              {/* Photo Display Box */}
-              <div 
-                className="hero-photo-display"
-                style={{
-                  backgroundImage: `url(${heroPhotos[selectedPhoto]?.url})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-              />
-              
-              {/* Photo Slider */}
-              <div className="hero-photo-slider">
-                {heroPhotos.map((photo, index) => (
-                  <div
-                    key={photo.id}
-                    className={`hero-photo-thumb ${index === selectedPhoto ? 'active' : ''}`}
+    <div className="makoons-home-page">
+      {/* Hero Section - Makoons Style */}
+      <section className="hero-section">
+        <div className="hero-background">
+          <div 
+            className="hero-image"
                   style={{
-                      backgroundImage: `url(${photo.url})`,
+              backgroundImage: `url(${heroPhotos[selectedPhoto]?.url})`,
                     backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                    onClick={() => setSelectedPhoto(index)}
-                    title={photo.title}
-                  />
-                ))}
-              </div>
-            </Col>
-            
-            <Col lg={4} className="d-flex align-items-center">
-              <div className="text-white">
-                <h3 className="fw-bold mb-3">About Srijan School</h3>
-                          <p className="lead mb-4">
-                  Life at Srijan centres on a shared commitment to academic excellence, 
-                  intellectual growth, and holistic development. We are dedicated to nurturing 
-                  young minds in Haldwani, Uttarakhand since 2018.
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                  }}
+          />
+          <div className="hero-overlay"></div>
+        </div>
+        
+        <Container className="hero-content">
+          <Row className="align-items-center min-vh-100">
+            <Col lg={6} className="hero-text-col">
+              <div className="hero-text">
+                <h1 className="hero-title">
+                  <span className="hero-subtitle">On this</span>
+                  <br />
+                  <span className="hero-main-title">Aksharabhyasam</span>
+                  <br />
+                  <span className="hero-action">Start Your Child's Education</span>
+                          </h1>
+                <p className="hero-description">
+                  Give your child a joyful beginning with our special educational program at Srijan School.
                 </p>
-                <div className="d-grid gap-2">
-                  <Button as={Link} to="/gallery" className="btn-school-primary">
+                <div className="hero-buttons">
+                  <Button as={Link} to="/contact" className="btn-primary-custom">
+                    Visit Srijan School
+                            </Button>
+                  <Button as={Link} to="/gallery" className="btn-secondary-custom">
                     View Gallery
                             </Button>
-                  <Button as={Link} to="/achievements" className="btn-school-accent">
-                    View Our Achievements
-                            </Button>
                 </div>
+              </div>
+            </Col>
+            <Col lg={6} className="hero-image-col">
+              <div className="hero-image-container">
+                <Image 
+                  src="/aboutus.JPG" 
+                  alt="Srijan School" 
+                  className="hero-main-image"
+                  fluid
+                />
+                          </div>
+                        </Col>
+                      </Row>
+                    </Container>
+      </section>
+
+      {/* School Quote Section */}
+      <section className="quote-section">
+            <Container>
+          <Row className="justify-content-center">
+            <Col lg={8} className="text-center">
+              <div className="quote-container">
+                <h2 className="quote-text">
+                  <span className="quote-mark">❝</span>
+                  <strong>Srijan School</strong> is where <br />
+                  <span className="quote-highlight">Young minds bloom</span>
+                  <span className="quote-mark">❞</span>
+                </h2>
                   </div>
                 </Col>
               </Row>
             </Container>
       </section>
 
-      {/* Message from Leaders */}
-      <section className="py-5 bg-light">
+      {/* School Stats Section */}
+      <section className="stats-section">
         <Container>
-          <Row className="text-center mb-5">
-            <Col>
-              <h2 className="text-gradient-primary mb-3">Message from Leaders</h2>
-              <p className="text-muted">Words of wisdom from our leadership team</p>
+          <Row className="text-center">
+            <Col md={3} className="mb-4">
+              <div className="stat-card">
+                <h3 className="stat-number">500+</h3>
+                <p className="stat-label">Happy Students</p>
+              </div>
             </Col>
-          </Row>
-          
-          <Row>
-            <Col lg={6} className="mb-4">
-              <Card className="h-100 card-elevated border-0">
-                <Card.Body className="text-center p-4">
-                  <div className="leader-avatar mb-3">
-                    <div className="avatar-circle">
-                      <span className="avatar-text">GS</span>
-                    </div>
+            <Col md={3} className="mb-4">
+              <div className="stat-card">
+                <h3 className="stat-number">25+</h3>
+                <p className="stat-label">Expert Teachers</p>
               </div>
-                  <h5 className="school-primary mb-2">G.S.MEHRA</h5>
-                  <p className="text-muted mb-3 fw-bold">Manager/Director</p>
-                  <blockquote className="blockquote mb-0">
-                    <p className="text-muted">
-                      "At Srijan School, we believe in nurturing not just academic excellence, 
-                      but also character, creativity, and compassion. Our commitment is to 
-                      provide a holistic education that prepares students for the challenges 
-                      of tomorrow while staying rooted in timeless values."
-                    </p>
-                  </blockquote>
-                </Card.Body>
-              </Card>
             </Col>
-            
-            <Col lg={6} className="mb-4">
-              <Card className="h-100 card-elevated border-0">
-                <Card.Body className="text-center p-4">
-                  <div className="leader-avatar mb-3">
-                    <div className="avatar-circle">
-                      <span className="avatar-text">KK</span>
+            <Col md={3} className="mb-4">
+              <div className="stat-card">
+                <h3 className="stat-number">7</h3>
+                <p className="stat-label">Years of Excellence</p>
               </div>
+            </Col>
+            <Col md={3} className="mb-4">
+              <div className="stat-card">
+                <h3 className="stat-number">100%</h3>
+                <p className="stat-label">Success Rate</p>
               </div>
-                  <h5 className="school-primary mb-2">Kailash Koranga</h5>
-                  <p className="text-muted mb-3 fw-bold">Principal</p>
-                  <blockquote className="blockquote mb-0">
-                    <p className="text-muted">
-                      "Education is the foundation of a progressive society. At Srijan School, 
-                      we strive to create an environment where every child can discover their 
-                      potential, develop critical thinking skills, and become responsible 
-                      citizens who contribute positively to our community."
-                    </p>
-                  </blockquote>
-                </Card.Body>
-              </Card>
             </Col>
           </Row>
         </Container>
       </section>
 
-      {/* About Preview */}
-      <section className="py-5">
+      {/* About School Section */}
+      <section className="about-school-section">
         <Container>
           <Row className="align-items-center">
-            <Col lg={6}>
-              <h2 className="text-gradient-primary mb-4">About Srijan School</h2>
-              <p className="lead text-muted mb-4">
-                Srijan School is an educational institution designed to provide learning spaces and learning environments 
-                for the teaching of students under the direction of dedicated teachers.
-              </p>
-              <p className="text-muted mb-4">
-                Life at Srijan centres on a shared commitment to academic excellence, intellectual growth, art, athletics, 
-                high standards of ethical awareness, sportsmanship, and community service.
-              </p>
-              <Button as={Link} to="/gallery" className="btn-school-primary" size="lg">
-                View Gallery
-              </Button>
+            <Col lg={6} className="mb-4 mb-lg-0">
+              <div className="about-image-container">
+                <Image 
+                  src="/aboutus2.JPG" 
+                  alt="About Srijan School" 
+                  className="about-school-image"
+                  fluid
+                />
+              </div>
             </Col>
             <Col lg={6}>
-              <div className="about-image">
-                <Carousel fade interval={3000} className="about-carousel">
-                  <Carousel.Item>
-                    <div 
-                      className="carousel-image-container  d-block w-100"
-                      style={{ 
-                        height: '400px', 
-                        backgroundColor: '#f8f9fa',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}
-                    >
-                      <Image 
-                        src="/aboutus.JPG" 
-                        alt="About Srijan School - Image 1" 
-                        className="carousel-image"
-                        style={{ 
-                          maxHeight: '100%', 
-                          maxWidth: '100%',
-                          objectFit: 'contain'
-                        }}
-                      />
-                    </div>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <div 
-                      className="carousel-image-container  d-block w-100"
-                  style={{
-                    height: '400px',
-                        backgroundColor: '#f8f9fa',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}
-                    >
-                      <Image 
-                        src="/aboutus2.JPG" 
-                        alt="About Srijan School - Image 2" 
-                        className="carousel-image"
-                        style={{ 
-                          maxHeight: '100%', 
-                          maxWidth: '100%',
-                          objectFit: 'contain'
-                        }}
-                      />
-                    </div>
-                  </Carousel.Item>
-                </Carousel>
+              <div className="about-content">
+                <h2 className="section-title">About Srijan School</h2>
+                <h3 className="about-subtitle">Where Every Child's Journey Begins</h3>
+                <p className="about-description">
+                  One of Uttarakhand's best schools, Srijan School, is committed to giving kids a loving, 
+                  exciting atmosphere in which they can learn and develop. As an established educational 
+                  institution, we encourage holistic development and make sure that every child enjoys 
+                  learning via play-based learning, engaging activities, and a well-organized curriculum.
+                </p>
+                <Button as={Link} to="/about" className="btn-primary-custom">
+                  Learn More
+                </Button>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
 
-      {/* Features */}
-      <section className="py-5 bg-light">
+      {/* Programs Section */}
+      <section className="programs-section">
         <Container>
           <Row className="text-center mb-5">
             <Col>
-              <h2 className="text-gradient-primary mb-3">Why Choose Srijan School</h2>
-              <p className="text-muted">We provide the best education and facilities for your child's growth</p>
+              <h2 className="section-title">Our Educational Programs</h2>
+              <p className="section-subtitle">Comprehensive learning for every age group</p>
             </Col>
           </Row>
           <Row className="g-4">
-            <Col md={4}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '3rem' }}>💻</div>
-                  <h5 className="school-primary">Smart Classes</h5>
-                  <p className="text-muted">
-                    Modern smart classrooms with digital learning tools and interactive whiteboards.
-                  </p>
+            <Col md={6} lg={4}>
+              <Card className="program-card">
+                <Card.Body className="text-center">
+                  <div className="program-icon">📚</div>
+                  <h4>Primary Education</h4>
+                  <p>Classes 1-5</p>
+                  <p className="text-muted">Foundation building with interactive learning</p>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={4}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '3rem' }}>🚌</div>
-                  <h5 className="school-primary">Transport Facility</h5>
-                  <p className="text-muted">
-                    Safe and reliable transport service with GPS tracking and trained drivers.
-                  </p>
+            <Col md={6} lg={4}>
+              <Card className="program-card">
+                <Card.Body className="text-center">
+                  <div className="program-icon">🎓</div>
+                  <h4>Secondary Education</h4>
+                  <p>Classes 6-10</p>
+                  <p className="text-muted">Advanced learning with practical applications</p>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={4}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '3rem' }}>🔬</div>
-                  <h5 className="school-primary">Science Labs</h5>
-                  <p className="text-muted">
-                    Well-equipped science laboratories for hands-on learning and experimentation.
-                  </p>
+            <Col md={6} lg={4}>
+              <Card className="program-card">
+                <Card.Body className="text-center">
+                  <div className="program-icon">🏆</div>
+                  <h4>Senior Secondary</h4>
+                  <p>Classes 11-12</p>
+                  <p className="text-muted">Exam preparation and career guidance</p>
                 </Card.Body>
               </Card>
             </Col>
@@ -506,63 +249,146 @@ const Home = () => {
         </Container>
       </section>
 
-      {/* Quick Links */}
-      <section className="py-5">
+      {/* Core Values Section */}
+      <section className="core-values-section">
         <Container>
           <Row className="text-center mb-5">
             <Col>
-              <h2 className="text-gradient-primary mb-3">Quick Links</h2>
-              <p className="text-muted">Important information and resources for students and parents</p>
+              <h2 className="section-title">Core Values</h2>
             </Col>
           </Row>
           <Row className="g-4">
-            <Col md={3}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '2.5rem' }}>📋</div>
-                  <h6 className="school-primary">Rules & Regulations</h6>
-                  <p className="text-muted small">School policies and guidelines</p>
-                  <Button as={Link} to="/rules" className="btn-school-secondary" size="sm">
-                    View Rules
+            <Col md={6} lg={3}>
+              <div className="value-card">
+                <div className="value-number">1</div>
+                <h5>Developing Little Explorers</h5>
+              </div>
+            </Col>
+            <Col md={6} lg={3}>
+              <div className="value-card">
+                <div className="value-number">2</div>
+                <h5>Language Blossoms</h5>
+              </div>
+            </Col>
+            <Col md={6} lg={3}>
+              <div className="value-card">
+                <div className="value-number">3</div>
+                <h5>From Crawling to Confident</h5>
+              </div>
+            </Col>
+            <Col md={6} lg={3}>
+              <div className="value-card">
+                <div className="value-number">4</div>
+                <h5>Active Bodies, Active Minds</h5>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Photo Gallery Preview */}
+      <section className="gallery-preview-section">
+        <Container>
+          <Row className="text-center mb-5">
+            <Col>
+              <h2 className="section-title">Gallery</h2>
+              <p className="section-subtitle">Capturing beautiful moments at Srijan School</p>
+            </Col>
+          </Row>
+          <Row className="g-3">
+            {heroPhotos.slice(0, 8).map((photo) => (
+              <Col md={3} key={photo.id}>
+                <div className="gallery-preview-item">
+                  <Image 
+                    src={photo.url} 
+                    alt={photo.title}
+                    className="gallery-preview-image"
+                    fluid
+                  />
+                </div>
+              </Col>
+            ))}
+          </Row>
+          <Row className="text-center mt-4">
+            <Col>
+              <Button as={Link} to="/gallery" className="btn-primary-custom">
+                View All Photos
                   </Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <Container>
+          <Row className="text-center mb-5">
+            <Col>
+              <h2 className="section-title">What Parents Say</h2>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            <Col md={6} lg={4}>
+              <Card className="testimonial-card">
+                <Card.Body>
+                  <p className="testimonial-text">
+                    "Enrolling my daughter in Srijan School is the best decision I've ever made. 
+                    The environment, classrooms, teachers, and importantly, the education process 
+                    is well-organized."
+                  </p>
+                  <div className="testimonial-author">
+                    <strong>Dr. Anand Singh</strong>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '2.5rem' }}>📸</div>
-                  <h6 className="school-primary">Gallery</h6>
-                  <p className="text-muted small">Photos and videos of school events</p>
-                  <Button as={Link} to="/gallery" className="btn-school-secondary" size="sm">
-                    View Gallery
-                  </Button>
+            <Col md={6} lg={4}>
+              <Card className="testimonial-card">
+                <Card.Body>
+                  <p className="testimonial-text">
+                    "The teachers and staff here are so nice and well-educated. My son loves 
+                    learning here, and we like that they have fun while learning."
+                  </p>
+                  <div className="testimonial-author">
+                    <strong>Mr. Shubham Garg</strong>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '2.5rem' }}>🏆</div>
-                  <h6 className="school-primary">Achievements</h6>
-                  <p className="text-muted small">Student and school accomplishments</p>
-                  <Button as={Link} to="/achievements" className="btn-school-secondary" size="sm">
-                    View Achievements
-                  </Button>
+            <Col md={6} lg={4}>
+              <Card className="testimonial-card">
+                <Card.Body>
+                  <p className="testimonial-text">
+                    "We couldn't be happier to see our child happy while learning. Their 
+                    educational structure is so good even my son always loves to learn."
+                  </p>
+                  <div className="testimonial-author">
+                    <strong>Dr. Manish Kr Gupta</strong>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3}>
-              <Card className="h-100 text-center card-elevated">
-                <Card.Body className="p-4">
-                  <div className="school-primary mb-3" style={{ fontSize: '2.5rem' }}>📞</div>
-                  <h6 className="school-primary">Contact Us</h6>
-                  <p className="text-muted small">Get in touch with us</p>
-                  <Button as={Link} to="/contact" className="btn-school-secondary" size="sm">
-                    Contact
-                  </Button>
-                </Card.Body>
-              </Card>
+          </Row>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <Container>
+          <Row className="text-center">
+            <Col>
+              <h2 className="cta-title">Ready to Start Your Child's Journey?</h2>
+              <p className="cta-description">
+                Join Srijan School and give your child the best education experience in Haldwani, Uttarakhand.
+              </p>
+              <div className="cta-buttons">
+                <Button as={Link} to="/contact" className="btn-primary-custom btn-large">
+                  Contact Us Today
+                </Button>
+                <Button as={Link} to="/about" className="btn-secondary-custom btn-large">
+                  Learn More
+                </Button>
+              </div>
             </Col>
           </Row>
         </Container>
