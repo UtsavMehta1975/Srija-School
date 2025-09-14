@@ -13,7 +13,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="school-bg-secondary text-white py-5 mt-5">
+      <footer className="footer-custom text-white py-5 mt-5">
         <Container>
           <Row>
             <Col md={4}>
@@ -29,10 +29,9 @@ const Footer = () => {
                     objectFit: 'contain'
                   }}
                 />
-                <h5 className="text-white mb-0">Srijan School</h5>
               </div>
-              <p className="text-white">
-                Excellence in Education Since 2018
+              <p className="text-white mb-2">
+                <strong>Excellence in Education Since 2018</strong>
               </p>
               <p className="text-white">
                 Nurturing young minds for a brighter tomorrow.
@@ -41,16 +40,32 @@ const Footer = () => {
             
             <Col md={4}>
               <h6 className="text-white mb-3">Quick Links</h6>
-              <ul className="list-unstyled">
-                <li className="mb-2"><Link to="/" className="text-white text-decoration-none">Home</Link></li>
-                <li className="mb-2"><Link to="/achievements" className="text-white text-decoration-none">Achievements</Link></li>
-                <li className="mb-2"><Link to="/gallery/media" className="text-white text-decoration-none">Media Gallery</Link></li>
-                <li className="mb-2"><Link to="/gallery/photos" className="text-white text-decoration-none">Photo Gallery</Link></li>
-                <li className="mb-2"><Link to="/gallery/videos" className="text-white text-decoration-none">Video Gallery</Link></li>
-                <li className="mb-2"><Link to="/rules/fees" className="text-white text-decoration-none">Fees Rules</Link></li>
-                <li className="mb-2"><Link to="/rules/timings" className="text-white text-decoration-none">School Timings</Link></li>
-                <li className="mb-2"><Link to="/rules/uniform" className="text-white text-decoration-none">School Uniform</Link></li>
-              </ul>
+              <Row>
+                <Col xs={6} className="mb-2">
+                  <Link to="/" className="text-white text-decoration-none">Home</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/academic-calendar" className="text-white text-decoration-none">Academic Calendar</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/gallery/media" className="text-white text-decoration-none">Media Gallery</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/gallery/photos" className="text-white text-decoration-none">Photo Gallery</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/gallery/videos" className="text-white text-decoration-none">Video Gallery</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/rules/fees" className="text-white text-decoration-none">Fees Rules</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/rules/timings" className="text-white text-decoration-none">School Timings</Link>
+                </Col>
+                <Col xs={6} className="mb-2">
+                  <Link to="/rules/uniform" className="text-white text-decoration-none">School Uniform</Link>
+                </Col>
+              </Row>
             </Col>
             
             <Col md={4}>

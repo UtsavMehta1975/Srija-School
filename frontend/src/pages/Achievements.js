@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
 
-const Achievements = () => {
-  const achievements = [
+const AcademicCalendar = () => {
+  const academicCalendar = [
     {
       title: "Academic Excellence",
       description: "Our students consistently achieve outstanding results in board examinations with 95%+ pass rate.",
@@ -58,7 +58,7 @@ const Achievements = () => {
       <Row className="mb-5">
         <Col>
           <div className="text-center">
-            <h1 className="text-gradient-primary mb-3">Our Achievements</h1>
+            <h1 className="text-gradient-primary mb-3">Academic Calendar</h1>
             <p className="lead text-muted">
               Celebrating excellence and recognizing the outstanding accomplishments of our students, teachers, and school community.
             </p>
@@ -67,7 +67,7 @@ const Achievements = () => {
       </Row>
 
       <Row className="g-4">
-        {achievements.map((achievement, index) => (
+        {academicCalendar.map((achievement, index) => (
           <Col md={6} lg={4} key={index}>
             <Card className="h-100 card-elevated">
               <Card.Body className="p-4">
@@ -133,6 +133,6 @@ const Achievements = () => {
   );
 };
 
-export default Achievements;
+export default AcademicCalendar;
 
 

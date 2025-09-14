@@ -181,27 +181,36 @@ const Home = () => {
             <Col lg={6}>
               <div className="about-content">
                 <h2 className="section-title school-primary">
-                  About Srijan School
+                  About Us
                 </h2>
-                <p className="about-description text-on-white-black">
-                  Srijan School is committed to providing quality education that nurtures young minds 
-                  and prepares them for a successful future. We believe in holistic development and 
-                  academic excellence.
+                <h3 className="school-primary mb-3">Our Motto</h3>
+                <p className="about-description text-on-white-black mb-4">
+                  <strong>SUCCESS THROUGH EXCELLENCE / LOVE & AFFECTION, CARE & CONCERN, EDUCATION AND ADVISE.</strong>
                 </p>
-                <div className="about-features">
-                  <div className="feature-item">
-                    <h4 className="school-primary">🎓 Quality Education</h4>
-                    <p className="text-on-white-black">Comprehensive curriculum designed for modern learning</p>
-                  </div>
-                  <div className="feature-item">
-                    <h4 className="school-primary">👨‍🏫 Experienced Teachers</h4>
-                    <p className="text-on-white-black">Dedicated and qualified teaching staff</p>
-                  </div>
-                  <div className="feature-item">
-                    <h4 className="school-primary">🏆 Academic Excellence</h4>
-                    <p className="text-on-white-black">Consistent track record of outstanding results</p>
-                  </div>
-                </div>
+                <p className="about-description text-on-white-black mb-4">
+                  The adopted motto of Srijan School is 'Wisdom & Vibrance/ Care & Share'. These are the underlying principles of all that we stand for at Srijan.
+                </p>
+                
+                <h3 className="school-primary mb-3">Our Vision</h3>
+                <p className="about-description text-on-white-black mb-4">
+                  To be recognized nationally and preferably locally.
+                </p>
+                
+                <h3 className="school-primary mb-3">Our Mission</h3>
+                <ul className="about-mission text-on-white-black">
+                  <li>To impart value adding education through an integrated, contemporary and progressive approach</li>
+                  <li>To mould our students to global citizens acknowledging Indian values</li>
+                  <li>To instill humanitarian values and social commitment in our students</li>
+                  <li>To continuously improve the quality of our system</li>
+                  <li>To believe that each child is unique and has infinite potential</li>
+                  <li>To prepare them for the opportunities and challenges of a globally connected world</li>
+                  <li>To cultivate a sense of fair play, accountability and transparency in everything we do</li>
+                </ul>
+                
+                <h3 className="school-primary mb-3">Logo</h3>
+                <p className="about-description text-on-white-black">
+                  The logo of Srijan School depicts our motto. The shield is divided into four. The graduation hat symbolizes the achievement in education, knowledge and wisdom. The globe represents the earth emphasizing our global view, our belief that world is a family, and we are global citizens. The humans displayed highlight our happy children and the importance of teamwork. The folded palms represent the gesture 'Namaste', underlining our respect for Indian values. The shield shows how one protects oneself by achieving knowledge and wisdom. The olive branch symbolizes prosperity and peace on attainment of wisdom.
+                </p>
                 <Button 
                   as={Link} 
                   to="/about" 
@@ -215,8 +224,8 @@ const Home = () => {
             <Col lg={6}>
               <div className="about-image">
                 <img 
-                  src="/IMG_8192.JPG" 
-                  alt="Srijan School" 
+                  src="/mainsinglelogo.png" 
+                  alt="Srijan School Logo" 
                   className="img-fluid rounded"
                 />
               </div>
@@ -232,7 +241,7 @@ const Home = () => {
             Quick Links
           </h2>
           <Row>
-            <Col md={3} className="mb-4">
+            <Col xs={6} md={3} className="mb-4">
               <Card className="quick-link-card h-100">
                 <Card.Body className="text-center">
                   <div className="quick-link-icon school-primary">📚</div>
@@ -244,7 +253,7 @@ const Home = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3} className="mb-4">
+            <Col xs={6} md={3} className="mb-4">
               <Card className="quick-link-card h-100">
                 <Card.Body className="text-center">
                   <div className="quick-link-icon school-primary">🖼️</div>
@@ -256,19 +265,19 @@ const Home = () => {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3} className="mb-4">
+            <Col xs={6} md={3} className="mb-4">
               <Card className="quick-link-card h-100">
                 <Card.Body className="text-center">
                   <div className="quick-link-icon school-primary">🏆</div>
-                  <h5 className="card-title">Achievements</h5>
-                  <p className="card-text">See our students' and school's achievements</p>
-                  <Button as={Link} to="/achievements" variant="outline-primary" size="sm">
-                    View Achievements
+                  <h5 className="card-title">Academic Calendar</h5>
+                  <p className="card-text">View our academic calendar and important dates</p>
+                  <Button as={Link} to="/academic-calendar" variant="outline-primary" size="sm">
+                    View Calendar
                   </Button>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={3} className="mb-4">
+            <Col xs={6} md={3} className="mb-4">
               <Card className="quick-link-card h-100">
                 <Card.Body className="text-center">
                   <div className="quick-link-icon school-primary">📞</div>

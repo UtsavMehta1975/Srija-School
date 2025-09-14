@@ -30,7 +30,7 @@ const Header = () => {
       id: 2,
       content: (
         <div className="carousel-content school-secondary">
-          <Link to="/achievements" className="school-secondary">🏆 Achievements</Link>
+          <Link to="/academic-calendar" className="school-secondary">📅 Academic Calendar</Link>
           <Link to="/fees" className="school-secondary">💰 Fees</Link>
           <Link to="/gallery" className="school-secondary">🖼️ Gallery</Link>
           <Link to="/gallery/media" className="school-secondary">📺 Media</Link>
@@ -192,11 +192,11 @@ const Header = () => {
               
               <Nav.Link 
                 as={Link} 
-                to="/achievements" 
-                className={`school-primary ${isActive('/achievements') ? 'fw-bold' : ''}`}
+                to="/academic-calendar" 
+                className={`school-primary ${isActive('/academic-calendar') ? 'fw-bold' : ''}`}
                 onClick={() => setExpanded(false)}
               >
-                Achievements
+                Academic Calendar
               </Nav.Link>
               
               <Nav.Link 

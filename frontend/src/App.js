@@ -12,7 +12,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import Achievements from './pages/Achievements';
+import AcademicCalendar from './pages/Achievements';
 import MandatoryDisclosure from './pages/MandatoryDisclosure';
 
 // Rules & Regulations Pages
@@ -49,7 +49,7 @@ function App() {
               {/* Public Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/achievements" element={<Achievements />} />
+              <Route path="/academic-calendar" element={<AcademicCalendar />} />
               <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
               <Route path="/contact" element={<Contact />} />
               

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, Table } from 'react-bootstrap';
 
 const VacationRules = () => {
-  const academicCalendar = [
+  const achievements = [
     { month: "April", events: "New Academic Year Begins, Orientation Program", holidays: "Good Friday" },
     { month: "May", events: "Summer Vacation (Mid-May to Mid-June)", holidays: "Labour Day" },
     { month: "June", events: "School Reopens, First Term Examinations", holidays: "No major holidays" },
@@ -35,18 +35,18 @@ const VacationRules = () => {
           <div className="text-center">
             <h1 className="text-primary mb-3">Vacation Rules</h1>
             <p className="lead text-muted">
-              Holiday schedule, vacation policies, and academic calendar for Srijan School
+              Holiday schedule, vacation policies, and achievements for Srijan School
             </p>
           </div>
         </Col>
       </Row>
 
-      {/* Academic Calendar */}
+      {/* Achievements */}
       <Row className="mb-5">
         <Col>
           <Card className="border-0 shadow-sm">
             <Card.Header className="bg-primary text-white">
-              <h4 className="mb-0">Academic Calendar 2024-25</h4>
+              <h4 className="mb-0">Achievements 2024-25</h4>
             </Card.Header>
             <Card.Body className="p-0">
               <Table responsive className="mb-0">
@@ -58,7 +58,7 @@ const VacationRules = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {academicCalendar.map((month, index) => (
+                  {achievements.map((month, index) => (
                     <tr key={index}>
                       <td className="fw-bold text-primary">{month.month}</td>
                       <td>{month.events}</td>
