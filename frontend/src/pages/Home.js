@@ -191,15 +191,15 @@ const Home = () => {
                 <div className="about-features">
                   <div className="feature-item">
                     <h4 className="school-primary">🎓 Quality Education</h4>
-                    <p>Comprehensive curriculum designed for modern learning</p>
+                    <p className="text-on-white-black">Comprehensive curriculum designed for modern learning</p>
                   </div>
                   <div className="feature-item">
                     <h4 className="school-primary">👨‍🏫 Experienced Teachers</h4>
-                    <p>Dedicated and qualified teaching staff</p>
+                    <p className="text-on-white-black">Dedicated and qualified teaching staff</p>
                   </div>
                   <div className="feature-item">
                     <h4 className="school-primary">🏆 Academic Excellence</h4>
-                    <p>Consistent track record of outstanding results</p>
+                    <p className="text-on-white-black">Consistent track record of outstanding results</p>
                   </div>
                 </div>
                 <Button 
