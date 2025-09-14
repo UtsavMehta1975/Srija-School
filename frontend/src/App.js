@@ -5,6 +5,7 @@ import { AuthProvider } from './context/AuthContext';
 // Layout Components
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 // Page Components
 import Home from './pages/Home';
@@ -40,6 +41,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <div className="App">
           <Header />
           <main>
